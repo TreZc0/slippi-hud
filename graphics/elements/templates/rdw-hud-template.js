@@ -21,7 +21,7 @@ return html`
 	width: 1920px;
 	height: 1080px;
 	overflow: hidden;
-    font-family: Nintender;
+	font-family: Nintender;
 }
 #FG {
 	position: absolute;
@@ -153,7 +153,6 @@ return html`
 	border-left: 3px solid;
 	border-right: 3px solid;
 }
-
 </style>
 
 <div id="BG">
@@ -167,7 +166,7 @@ return html`
 	<div id="P1Sponsor"></div>
 	<div id="P1Score" class="score">${this.generalData.tournament.scores[this.playerData[0].slippi.id].score}</div>
 	<div id="P1Stocks" class="stocks">
-	<div class="stock" style="animation: 0.2s linear 0s 1"><img class="stockImg" src="./img/slippi-hud/stocks/${this.playerData[0].slippi.character.id}/${this.playerData[0].slippi.character.costumeId}.png"></div>
+		<div class="stock" style="animation: 0.2s linear 0s 1"><img class="stockImg" src="./img/slippi-hud/stocks/${this.playerData[0].slippi.character.id}/${this.playerData[0].slippi.character.costumeId}.png"></div>
 	</div>
 	
 	<div id="P2Name" class="name"> ${this.playerData[1].player.name}</div>

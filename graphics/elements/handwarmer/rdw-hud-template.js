@@ -21,15 +21,15 @@ return html`
     color: white;
 }
 #tournament {
-padding-top: 44px;
+    padding-top: 44px;
 }
 
 #round {
-padding-top: 44px;
+    padding-top: 44px;
 }
 
 #best {
-padding-top: 44px;
+    padding-top: 44px;
 }
 
 #com0 {
@@ -80,10 +80,10 @@ padding-top: 44px;
 
 </style>
 <div id="overlay">
-<div id="com0" class="names">${this.generalData.tournament.commentators[0].name}</div>
-<div id="com1" class="names">${this.generalData.tournament.commentators[1].name}</div>
-<div id="player0" class="names">${this.playerData[0].player.name}</div>
-<div id="player1" class="names">${this.playerData[1].player.name}</div>
+    <div id="com0" class="names">${this.generalData.tournament.commentators[0].name}</div>
+    <div id="com1" class="names">${this.generalData.tournament.commentators[1].name}</div>
+    <div id="player0" class="names">${this.playerData[0].player.name}</div>
+    <div id="player1" class="names">${this.playerData[1].player.name}</div>
 </div>
 `;
 

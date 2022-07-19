@@ -304,12 +304,9 @@ position: absolute;
 }
 .data {
 	position: absolute;
-	
 }
 .stat {
-	color: white;
-	
-	
+	color: white;	
 }
 .port-1 {
 	background: url('./img/extras/port1.png') no-repeat 0px 0px;
