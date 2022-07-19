@@ -1,0 +1,8 @@
+@font-face {font-family: "Nintender";
+    src: url("Nintender.eot"); /* IE9*/
+    src: url("Nintender.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("Nintender.woff2") format("woff2"), /* chrome、firefox */
+    url("Nintender.woff") format("woff"), /* chrome、firefox */
+    url("Nintender.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("Nintender.svg#Nintender") format("svg"); /* iOS 4.1- */
+}
