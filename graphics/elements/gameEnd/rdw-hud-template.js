@@ -15,6 +15,8 @@ return html`
 	position: absolute;
 	left: 0px;
 	top: 0px;
+	width: 1920px;
+	height: 1080px;
 	font-family: "Nintender";
 }
 #overlay {
@@ -32,7 +34,7 @@ return html`
 }
 #RScore {
 	position: absolute;
-    right: 380px;
+    right: 377px;
 }
 
 #LName {

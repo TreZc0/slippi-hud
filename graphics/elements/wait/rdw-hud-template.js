@@ -12,101 +12,103 @@ return html``;
 return html`
 
 <style>
-#overlay {
-    top: 0px;
-	left: 0px;
-    background: url(./img/extras/wait.png) no-repeat;
-    height: 1080px;
-    width: 1920px;
-    position: absolute;
-	font-family: "metropolis black";
-	
-}
-#tournament {
-padding-top: 44px;
-}
+    #overlay {
+        top: 0px;
+        left: 0px;
+        background: url('./img/rdw/templates/default.png') no-repeat;
+        height: 1080px;
+        width: 1920px;
+        position: absolute;
+        font-family: "Nintender";
+        color: white;
+        letter-spacing: 0.1em;
+    }
 
-#round {
-padding-top: 44px;
-}
+    #tournament {
+        padding-top: 44px;
+    }
 
-#best {
-padding-top: 44px;
-}
+    #round {
+        padding-top: 44px;
+    }
 
-#com0 {
-    position: absolute;
-    left: 632px;
-    top: 560px;
-    width: 260px;
-    text-align: center;
-    font-size: 20px;
-}
+    #best {
+        padding-top: 44px;
+    }
 
-#com1 {
-    position: absolute;
-    left: 1027px;
-    top: 560px;
-    width: 260px;
-    text-align: center;
-    font-size: 20px;
-}
+    #com0 {
+        position: absolute;
+        left: 632px;
+        top: 560px;
+        width: 260px;
+        text-align: center;
+        font-size: 20px;
+    }
 
-#player0 {
-    position: absolute;
-    left: 208px;
-    top: 1026px;
-    width: 260px;
-    text-align: center;
-}
+    #com1 {
+        position: absolute;
+        left: 1027px;
+        top: 560px;
+        width: 260px;
+        text-align: center;
+        font-size: 20px;
+    }
 
-#sponsor0 {
-    position: absolute;
-	left: 10px;
-	top: 20px;	
-}
+    #player0 {
+        position: absolute;
+        left: 208px;
+        top: 1026px;
+        width: 260px;
+        text-align: center;
+    }
 
-#score0 {
-    position: absolute;
-    left: 356px;
-    top: 975px;
-    font-size: 42px;
-    text-align: center;
-    width: 60px;
-}
+    #sponsor0 {
+        position: absolute;
+        left: 10px;
+        top: 20px;	
+    }
 
-#player1 {
-    position: absolute;
-    left: 604px;
-    top: 1026px;
-    width: 260px;
-    text-align: center;
-}
+    #score0 {
+        position: absolute;
+        left: 356px;
+        top: 975px;
+        font-size: 42px;
+        text-align: center;
+        width: 60px;
+    }
 
-#score1 {
-position: absolute;
-    left: 418px;
-    top: 975px;
-    font-size: 42px;
-    text-align: center;
-    width: 60px;
-}
+    #player1 {
+        position: absolute;
+        left: 604px;
+        top: 1026px;
+        width: 260px;
+        text-align: center;
+    }
 
-#sponsor{
-	font-size: 22px;
-}
-#player {
-	font-size: 32px;
-	}
-	
-#box {
-position: absolute;
-    left: 10px;
-    top: 10px;
-    text-align: center;
-    width: 450px;
-    font-size: 42px;
-}
+    #score1 {
+        position: absolute;
+        left: 418px;
+        top: 975px;
+        font-size: 42px;
+        text-align: center;
+        width: 60px;
+    }
+
+    #sponsor {
+        font-size: 22px;
+    }
+    #player {
+        font-size: 32px;
+    }
+        
+    #box {
+        position: absolute;
+        left: 735px;
+        top: 10px;
+        text-align: center;
+        width: 450px;
+        font-size: 42px;
+    }
 
 </style>
 
