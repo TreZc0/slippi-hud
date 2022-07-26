@@ -15,7 +15,7 @@ return html`
     #overlay {
         top: 0px;
         left: 0px;
-        background: url('./img/rdw/templates/default.png') no-repeat;
+        background: url('./img/rdw/templates/wait.png') no-repeat;
         height: 1080px;
         width: 1920px;
         position: absolute;
@@ -24,105 +24,50 @@ return html`
         letter-spacing: 0.1em;
     }
 
-    #tournament {
-        padding-top: 44px;
-    }
-
-    #round {
-        padding-top: 44px;
-    }
-
-    #best {
-        padding-top: 44px;
-    }
-
     #com0 {
         position: absolute;
-        left: 632px;
-        top: 560px;
-        width: 260px;
-        text-align: center;
-        font-size: 20px;
+        left: 376px;
+        bottom: 8px;
     }
 
     #com1 {
         position: absolute;
-        left: 1027px;
-        top: 560px;
-        width: 260px;
-        text-align: center;
-        font-size: 20px;
+        right: 376px;
+        bottom: 8px;
     }
-
-    #player0 {
+    #com0handle {
         position: absolute;
-        left: 208px;
-        top: 1026px;
-        width: 260px;
-        text-align: center;
+        left: 540px;
+        bottom: 62px;
     }
 
-    #sponsor0 {
+    #com1handle {
         position: absolute;
-        left: 10px;
-        top: 20px;	
+        right: 540px;
+        bottom: 62px;
     }
 
-    #score0 {
-        position: absolute;
-        left: 356px;
-        top: 975px;
-        font-size: 42px;
+    .coms {
         text-align: center;
-        width: 60px;
-    }
-
-    #player1 {
-        position: absolute;
-        left: 604px;
-        top: 1026px;
-        width: 260px;
-        text-align: center;
-    }
-
-    #score1 {
-        position: absolute;
-        left: 418px;
-        top: 975px;
-        font-size: 42px;
-        text-align: center;
-        width: 60px;
-    }
-
-    #sponsor {
-        font-size: 22px;
-    }
-    #player {
         font-size: 32px;
+        width: 420px;
     }
-        
-    #box {
-        position: absolute;
-        left: 735px;
-        top: 10px;
+
+    .handle {
         text-align: center;
-        width: 450px;
-        font-size: 42px;
+        font-size: 24px;
+        width: 260px;
     }
+
 
 </style>
 
 <div id="overlay">
-<div id="box">
-	<div id="tournament">${this.generalData.tournament.name}</div>
-	<div id="round">${this.generalData.tournament.round}</div>
-	<div id="best">Best Of ${this.generalData.tournament.bestOf}</div>
-</div>
-<div id="com0">${this.generalData.tournament.commentators[0].name}</div>
-<div id="com1">${this.generalData.tournament.commentators[1].name}</div>
+<div id="com0" class="coms">${this.generalData.tournament.commentators[0].name}</div>
+<div id="com1" class="coms">${this.generalData.tournament.commentators[1].name}</div>
 
-<div id="player0"><span id='player'> ${this.playerData[0].player.name}</span></div>
-<div id="player1"><span id='player'> ${this.playerData[1].player.name}</span></div>
+<div id="com0handle" class="handle"> ${this.generalData.tournament.commentators[0].info}</span></div>
+<div id="com1handle" class="handle"> ${this.generalData.tournament.commentators[1].info}</span></div>
 </div>
 `;
 
