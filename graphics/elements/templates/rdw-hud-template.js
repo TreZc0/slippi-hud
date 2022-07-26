@@ -7,6 +7,11 @@ import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout';
 export const template = function () {
 
 let colors = ["red", "blue", "yellow", "green"];
+let teamMode = false;
+
+if (this.generalData && this.generalData.slippi && this.generalData.slippi.isTeams) {
+	teamMode = true;
+}
 
 if (!this.ready)
 return html``;
@@ -102,6 +107,9 @@ return html`
     font-size: 30px;
     width: 294px;
     text-align: center;
+	display: flex;
+	flex-direction: column;
+	${teamMode ? html`margin-top: -15px;` : html``}
 }
 .score {
 	top: 960px;
@@ -124,7 +132,7 @@ return html`
 	top: 949px;
 	height: 32px;
 	width: 160px;
-	display: flex;
+	${teamMode ? html`display: none;` : html`display: flex;`}
 }
 .stockImg {
 	width: 32px;
@@ -162,16 +170,16 @@ return html`
 	<div id="round" class="title">${this.generalData.tournament.round}</div>
 	<div id="best" class="title">Best Of ${this.generalData.tournament.bestOf}</div>
 
-	<div id="P1Name" class="name"> ${this.playerData[0].player.name}</div>
+	<div id="P1Name" class="name">${teamMode ? html`${this.playerData[0].player.name}<br>${this.playerData[1].player.name}` : html`${this.playerData[0].player.name}`}</div>
 	<div id="P1Sponsor"></div>
-	<div id="P1Score" class="score">${this.generalData.tournament.scores[this.playerData[0].slippi.id].score}</div>
+	<div id="P1Score" class="score">${teamMode ? html`${this.generalData.tournament.scores[this.generalData.slippi.activeTeams.findIndex(team => team === this.playerData[0].slippi.teamId)].score}` : html`${this.generalData.tournament.scores[this.playerData[0].slippi.id].score}`}</div>
 	<div id="P1Stocks" class="stocks">
 		<div class="stock" style="animation: 0.2s linear 0s 1"><img class="stockImg" src="./img/slippi-hud/stocks/${this.playerData[0].slippi.character.id}/${this.playerData[0].slippi.character.costumeId}.png"></div>
 	</div>
 	
-	<div id="P2Name" class="name"> ${this.playerData[1].player.name}</div>
+	<div id="P2Name" class="name">${teamMode ? html`${this.playerData[2].player.name}<br>${this.playerData[3].player.name}` : html`${this.playerData[1].player.name}`}</div>
 	<div id="P2Sponsor"></div>
-	<div id="P2Score" class="score">${this.generalData.tournament.scores[this.playerData[1].slippi.id].score}</div>
+	<div id="P2Score" class="score">${teamMode ? html`${this.generalData.tournament.scores[this.generalData.slippi.activeTeams.findIndex(team => team === this.playerData[2].slippi.teamId)].score}` : html`${this.generalData.tournament.scores[this.playerData[1].slippi.id].score}`}</div>
 	<div id="P2Stocks" class="stocks">
 		<div class="stock" style="animation: 0.2s linear 0s 1"><img class="stockImg" src="./img/slippi-hud/stocks/${this.playerData[1].slippi.character.id}/${this.playerData[1].slippi.character.costumeId}.png"></div>
 	</div>
