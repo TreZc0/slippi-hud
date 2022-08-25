@@ -7,6 +7,7 @@ import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout';
 export const template = function () {
 
 let colors = ["red", "blue", "yellow", "green"];
+let teamColors = ["red", "blue", "green"];
 let teamMode = false;
 
 if (this.generalData && this.generalData.slippi && this.generalData.slippi.isTeams) {
@@ -76,16 +77,16 @@ return html`
 	height: 188px;
 }
 #P1Name {
-    	left: 5px;
+    left: 5px;
 }
 #P2Name {
-    	right: 5px;
+    right: 5px;
 }
 #P1Score {
-    	left: 259px;
+    left: 259px;
 }
 #P2Score {
-    	right: 259px;
+    right: 259px;
 }
 #P1Stocks {	
 	left: 10px;
@@ -104,9 +105,9 @@ return html`
 .name {
 	top: 1025px;
 	position: absolute;
-    	font-size: 30px;
-    	width: 294px;
-	text-align: center;
+    font-size: 30px;
+    width: 294px;
+    text-align: center;
 	display: flex;
 	flex-direction: column;
 	${teamMode ? html`margin-top: -15px;` : html``}
@@ -114,15 +115,15 @@ return html`
 .score {
 	top: 960px;
 	position: absolute;
-   	font-size: 36px;
-   	width: 44px;
-    	text-align: center;
+    font-size: 36px;
+    width: 44px;
+    text-align: center;
 }
 .title {
-    	color: white;
-    	font-size: 20px;
-    	text-align: center;
-    	width: 268px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 268px;
 	position: absolute;
 	right: 15px;
 	letter-spacing: 0.1em;
@@ -139,22 +140,22 @@ return html`
 	margin-right: 5px;
 }
 .red {
-	border-color: #f15959 !important;;
+	border-color: #f15959 !important;
 }
 .yellow {
-	border-color: #febe3f !important;;
+	border-color: #febe3f !important;
 }
 .green {
-	border-color: #4ce44c !important;;
+	border-color: #4ce44c !important;
 }
 .blue {
-	border-color: #6565fe !important;;
+	border-color: #6565fe !important;
 }
 .border {
 	position: absolute;
 	top: 565px;
-    	width: 298px;
-    	height: 413px;
+    width: 298px;
+    height: 413px;
 	z-index: -1;
 	border-top: 16px solid;
 	border-bottom: 16px solid;
@@ -164,8 +165,8 @@ return html`
 </style>
 
 <div id="BG">
-	<div class="border ${colors[this.playerData[0].slippi.port-1]}" id="P1P"></div>
-	<div class="border ${colors[this.playerData[1].slippi.port-1]}" id="P2P"></div>
+	<div class="border ${teamMode ? teamColors[this.playerData[0].player.teamId] : colors[this.playerData[0].slippi.port-1]}" id="P1P"></div>
+	<div class="border ${teamMode ? teamColors[this.playerData[2].player.teamId] : colors[this.playerData[1].slippi.port-1]}" id="P2P"></div>
 	<div id="FG"></div>
 	<div id="round" class="title">${this.generalData.tournament.round}</div>
 	<div id="best" class="title">Best Of ${this.generalData.tournament.bestOf}</div>
