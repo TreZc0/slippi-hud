@@ -7,6 +7,7 @@ import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout';
 export const template = function () {
 
 let colors = ["red", "blue", "yellow", "green"];
+let teamColors = ["red", "blue", "green"];
 let teamMode = false;
 
 if (this.generalData && this.generalData.slippi && this.generalData.slippi.isTeams) {
@@ -139,16 +140,16 @@ return html`
 	margin-right: 5px;
 }
 .red {
-	border-color: #f15959 !important;;
+	border-color: #f15959 !important;
 }
 .yellow {
-	border-color: #febe3f !important;;
+	border-color: #febe3f !important;
 }
 .green {
-	border-color: #4ce44c !important;;
+	border-color: #4ce44c !important;
 }
 .blue {
-	border-color: #6565fe !important;;
+	border-color: #6565fe !important;
 }
 .border {
 	position: absolute;
@@ -164,8 +165,8 @@ return html`
 </style>
 
 <div id="BG">
-	<div class="border ${colors[this.playerData[0].slippi.port-1]}" id="P1P"></div>
-	<div class="border ${colors[this.playerData[1].slippi.port-1]}" id="P2P"></div>
+	<div class="border ${teamMode ? teamColors[this.playerData[0].player.teamId] : colors[this.playerData[0].slippi.port-1]}" id="P1P"></div>
+	<div class="border ${teamMode ? teamColors[this.playerData[2].player.teamId] : colors[this.playerData[1].slippi.port-1]}" id="P2P"></div>
 	<div id="FG"></div>
 	<div id="round" class="title">${this.generalData.tournament.round}</div>
 	<div id="best" class="title">Best Of ${this.generalData.tournament.bestOf}</div>
