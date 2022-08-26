@@ -9,6 +9,12 @@ export const template = function () {
 if (!this.ready)
 return html``;
 
+let teamMode = false;
+
+if (this.generalData && this.generalData.slippi && this.generalData.slippi.isTeams) {
+	teamMode = true;
+}
+
 return html`
 <style>
 #container {
@@ -75,15 +81,20 @@ return html`
 	letter-spacing: 0.1em;
 }
 
+.small {
+	font-size: 20px;
+	margin-top: 5px;
+}
+
 </style>
 <div id="container">
 	<div id="overlay"></div>
 
-	<div id="LName" class="name">${this.playerData[0].player.name}</div>
-	<div id="RName" class="name">${this.playerData[1].player.name}</div>
+	<div id="LName" class="name${teamMode ? ' small' : ''}">${teamMode ? html`${this.playerData[0].player.name} - ${this.playerData[1].player.name}` : html`${this.playerData[0].player.name}`}</div>
+	<div id="RName" class="name${teamMode ? ' small' : ''}">${teamMode ? html`${this.playerData[2].player.name} - ${this.playerData[3].player.name}` : html`${this.playerData[1].player.name}`}</div>
 
-	<div id="LScore" class="score">${this.generalData.tournament.scores[this.playerData[0].slippi.id].score}</div>
-	<div id="RScore" class="score">${this.generalData.tournament.scores[this.playerData[1].slippi.id].score}</div>
+	<div id="LScore" class="score">${teamMode ? html`${this.generalData.tournament.scores[this.generalData.slippi.activeTeams.findIndex(team => team === this.playerData[0].slippi.teamId)].score}` : html`${this.generalData.tournament.scores[this.playerData[0].slippi.id].score}`}</div>
+	<div id="RScore" class="score">${teamMode ? html`${this.generalData.tournament.scores[this.generalData.slippi.activeTeams.findIndex(team => team === this.playerData[2].slippi.teamId)].score}` : html`${this.generalData.tournament.scores[this.playerData[1].slippi.id].score}`}</div>
 
 	<div id="round" class="title">${this.generalData.tournament.round}</div>
 </div>
